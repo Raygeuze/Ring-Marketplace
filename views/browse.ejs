@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <% include ./partials/navbar.ejs %>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div class="container">
+      <% for(i = 0; i < rings.length; i++){ %>
+        <div class = "item">
+          <div class = "ring-item">
+            <h2><strong><%= rings[i].Name %></strong></h2>
+            <img src = <%= rings[i].Image %> />
+            <p><%= rings[i].Description %></p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+
+  </body>
+</html>

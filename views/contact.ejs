@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <% include ./partials/navbar.ejs %>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form class="contact-form" method="POST">
+      <input name="email" placeholder='Email'
+      value="<%if(email != null){%><%=email%><%}%>"/>
+      <input name="firstname" placeholder='Firstname'
+      value="<%if(firstname != null){%><%=firstname%><%}%>"/>
+      <input name="lastname" placeholder='Lastname'
+      value="<%if(lastname != null){%><%=lastname%><%}%>"/>
+      <input name="subject" placeholder='Subject'
+      value="<%if(subject != null){%><%=subject%><%}%>"/>
+      <textarea name="message" placeholder='Message'
+      ><%if(message != null){%><%=message%><%}%></textarea>
+      <button formaction="/contact" type"submit">Submit</button>
+    </form>     <!-- in a single form so they use the same submit button.
+        i think can put them in seperate forms for easier styling
+        -->
+
+  </body>
+</html>
