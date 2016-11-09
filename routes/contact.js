@@ -29,13 +29,11 @@ router.post('/', function(req, res, next) {
   var pass = jsonContent.pass;
   var emailTo = jsonContent.emailTo;
 
-  console.log("testing TESETIIINTNGNNGNDGNSDFN");
-
   //honeypot for spam bots. extra field that only bots will see
   if(req.body.company){
     res.render('contact', {
       //not sure if this is the best way to handle this.
-      //am i confident a user will never get to this.
+      //am i confident a user will never get to this???.
       title: "ERROR: Spam Bot Detected",
       email: req.body.email,
       firstname: req.body.firstname,
