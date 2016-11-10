@@ -10,15 +10,13 @@
     <p>Welcome to <%= title %></p>
 
     <div class="container">
-      <% for(i = 0; i < rings.length; i++){ %>
         <div class = "item">
           <div class = "ring-item">
-            <a href="browse/<%= rings[i].name %>"><strong><%= rings[i].name %></strong></a>
-            <a href="browse/<%= rings[i].name %>"><img src = <%= rings[i].image %> /></a>
-            <p><%= rings[i].description %></p>
+            <a href="/<%= item.name %>"><strong><%= item.name %></strong></a>
+            <img src = <%= item.image %> />
+            <p><%= item.description %></p>
           </div>
         </div>
-      <% } %>
     </div>
 
   </body>

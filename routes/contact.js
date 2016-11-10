@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+//when the form is submitted
 router.post('/', function(req, res, next) {
   //Pretty confident this all works but i need to work out how to secure
   //the application first. google wont let me send as it think it is a random

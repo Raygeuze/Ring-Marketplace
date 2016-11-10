@@ -10,15 +10,21 @@
     <p>Welcome to <%= title %></p>
 
     <form class="contact-form" method="POST">
+      <p>
       <input name="email" placeholder='Email'
       value="<%if(email != null){%><%=email%><%}%>"/>
+      </p>
+      <p>
+      <input name="subject" placeholder='Subject'
+      value="<%if(subject != null){%><%=subject%><%}%>"/>
+      </p>
+      <p>
       <input name="firstname" placeholder='Firstname'
       value="<%if(firstname != null){%><%=firstname%><%}%>"/>
       <input name="lastname" placeholder='Lastname'
       value="<%if(lastname != null){%><%=lastname%><%}%>"/>
-      <input name="subject" placeholder='Subject'
-      value="<%if(subject != null){%><%=subject%><%}%>"/>
-      <textarea name="message" placeholder='Message'
+      </p>
+      <textarea name="message" placeholder='Message' rows="15" cols="40"
       ><%if(message != null){%><%=message%><%}%></textarea>
       <button formaction="/contact" type"submit">Submit</button>
     </form>     <!-- in a single form so they use the same submit button.

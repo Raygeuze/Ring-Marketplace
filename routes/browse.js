@@ -24,4 +24,28 @@ function getAllRings(callback){
   });
 }
 
+//get this item
+router.get('/:id', function(req, res, next) {
+  console.log(req.params.id);
+  getItem(req.params.id, function(item){
+      res.render('purchase', {title: req.params.id, item: item});
+  });
+});
+
+function getItem(id,callback){
+  var item;
+  console.log(id+"inside get item");
+  ref.orderByChild('Rings').once('value')
+  .then(function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+      if(childSnapshot.val().name == id ){
+        console.log(childSnapshot.val());
+        item = childSnapshot.val();
+      }
+    });
+  }).then(function(){
+    callback(item);
+  });
+};
+
 module.exports = router;
