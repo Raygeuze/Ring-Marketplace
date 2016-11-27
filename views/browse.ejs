@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <% include ./partials/navbar.ejs %>
   <head>
     <title><%= title %></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='/css/style.css' />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- add .min.css and recompile for production -->
+    <!-- <link rel='stylesheet' href='/css/style.css' /> -->
+    <% include ./partials/navbar.ejs %>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -12,15 +13,14 @@
 
     <div class="container">
       <% for(i = 0; i < rings.length; i++){ %>
-        <div class = "item">
-          <div class = "ring-item">
+          <div class="col-md-3">
+            <a href="browse/<%= rings[i].name %>"><img src = <%= rings[i].image %> width="175" height="175"/></a>
             <a href="browse/<%= rings[i].name %>"><strong><%= rings[i].name %></strong></a>
-            <a href="browse/<%= rings[i].name %>"><img src = <%= rings[i].image %> /></a>
             <p><%= rings[i].description %></p>
           </div>
-        </div>
       <% } %>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
