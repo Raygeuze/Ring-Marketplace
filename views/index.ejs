@@ -4,13 +4,16 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- add .min.css and recompile for production -->
-    <!-- <link rel='stylesheet' href='/css/style.css' /> -->
+    <link rel='stylesheet' href='/css/style.css' />
     <title><%= title %></title>
     <% include ./partials/navbar.ejs %>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+    </div>
+    <% include ./partials/footer.ejs %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
